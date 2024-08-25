@@ -19,15 +19,15 @@ import org.springframework.data.annotation.Id;
 public class Cliente {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)//aqui diz que o id é um valor gerado automaticamente
     private Long id;
 
-    @NotNull(message = "Nome não pode ser nulo")
-    @Size(min = 2, max = 100, message = "Nome deve ter entre 2 e 100 caracteres")
+    @NotNull(message = "Nome não pode ser nulo")//valida o campo nome como não nulo
+    @Size(min = 2, max = 100, message = "Nome deve ter entre 2 e 100 caracteres")//faz a validação de tamanho do nome
     private String nome;
 
     @NotNull(message = "CPF não pode ser nulo")
-    @Pattern(regexp = "\\d{11}", message = "CPF deve ter 11 dígitos")
+    @Pattern(regexp = "\\d{11}", message = "CPF deve ter 11 dígitos")//valida o cpf como um dado que tenha 11 digitos e conta apenas os numeros como digitos validos
     private String cpf;
 
     @NotNull(message = "Idade não pode ser nula")
@@ -39,4 +39,5 @@ public class Cliente {
 
     @OneToMany(mappedBy = "cliente")
     private List<Venda> vendas;
+    
 }
