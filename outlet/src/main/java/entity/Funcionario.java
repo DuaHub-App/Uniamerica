@@ -17,11 +17,12 @@ public class Funcionario {
 	private String nome;
 	
 	@NotNull(message = "Idade não pode ser nula")
-	@Size(min = 1, max = 2, message = "Idade tem que ter um numero valido")
+	@Min(value = 18, message = "Idade mínima deve ser 18")
+	@Max(value = 125, message = "Idade máxima deve ser 125")
 	private Integer idade;
 	
 	@NotNull(message = "CPF não pode ser nulo")
-	@Pattern(regexp = "\\{11}", message = "CPF deve conter 11 digitos")
+	@Pattern(regexp = "\\d{11}", message = "CPF deve conter 11 dígitos")
 	private String cpf;
 	
 	@NotNull

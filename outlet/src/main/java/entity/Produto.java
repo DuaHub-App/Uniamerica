@@ -12,10 +12,12 @@ public class Produto {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@NotNull
+	@NotNull(message = "Nome do produto não pode ser nulo")
+	@Size(min = 1, max = 100, message = "Nome do produto deve ter entre 1 e 100 caracteres")
 	private String nome;
-	
-	@NotNull
+
+	@NotNull(message = "Valor do produto não pode ser nulo")
+	@DecimalMin(value = "0.0", inclusive = false, message = "O valor deve ser positivo")
 	private Double valor;
 	
 	//@NotNull

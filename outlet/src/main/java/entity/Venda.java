@@ -16,7 +16,8 @@ public class Venda {
 	
 	private String enderecoEntrega;
 	
-	@NotNull
+	@NotNull(message = "O valor total não pode ser nulo") //impede que o valor total da venda seja nulo
+	@DecimalMin(value = "0.0", inclusive = false, message = "O valor total deve ser maior que zero") 
 	private Double valorTotal;
 	
 	@ManyToOne
