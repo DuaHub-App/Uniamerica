@@ -35,7 +35,7 @@ public class Cliente {
     @NotNull(message = "Telefone não pode ser nulo")
     @Pattern(regexp = "\\(\\d{2}\\) \\d{4,5}-\\d{4}", message = "Telefone deve estar no formato (XX) XXXXX-XXXX")
     private String telefone;
-
+    
     @OneToMany(mappedBy = "cliente")
     private List<Venda> vendas;
 

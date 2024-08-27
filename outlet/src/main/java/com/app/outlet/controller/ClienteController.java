@@ -32,8 +32,8 @@ public class ClienteController {
                       .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
-    @PostMapping
-    public ResponseEntity<?> createCliente(@Valid @RequestBody Cliente cliente) {
+    @PostMapping("/save")
+    public ResponseEntity<?> createCliente( @RequestBody Cliente cliente) {
         try {
             Cliente novoCliente = clienteService.save(cliente);
             return new ResponseEntity<>(novoCliente, HttpStatus.CREATED);
@@ -74,19 +74,19 @@ public class ClienteController {
         }
     }
 
-    @GetMapping("/search/nome")
+    @GetMapping("/nome")
     public ResponseEntity<List<Cliente>> getClientesByNome(@RequestParam String nome) {
         List<Cliente> clientes = clienteService.findByNome(nome);
         return new ResponseEntity<>(clientes, HttpStatus.OK);
     }
 
-    @GetMapping("/search/cpf")
+    @GetMapping("/cpf")
     public ResponseEntity<List<Cliente>> getClientesByCpf(@RequestParam String cpf) {
         List<Cliente> clientes = clienteService.findByCpf(cpf);
         return new ResponseEntity<>(clientes, HttpStatus.OK);
     }
 
-    @GetMapping("/search/idade")
+    @GetMapping("/idade")
     public ResponseEntity<List<Cliente>> getClientesByIdadeMaiorOuIgual(@RequestParam Integer idade) {
         List<Cliente> clientes = clienteService.findByIdadeMaiorOuIgual(idade);
         return new ResponseEntity<>(clientes, HttpStatus.OK);

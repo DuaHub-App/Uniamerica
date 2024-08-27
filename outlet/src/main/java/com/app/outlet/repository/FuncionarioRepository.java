@@ -14,7 +14,7 @@ public interface FuncionarioRepository extends JpaRepository<Funcionario, Long> 
     
     Funcionario findByMatricula(String matricula);
 
-    List<Funcionario> findByNomeContaining(String nome);
+    List<Funcionario> findByNomeContaining(String nome);//procura por um determinado nome requisitado
 
-    List<Funcionario> findByIdadeBetween(Integer startAge, Integer endAge);
+    List<Funcionario> findByIdadeBetween(Integer startAge, Integer endAge);//exibe uma lista de funcionarios entre as idades que foram requisitadas
 }

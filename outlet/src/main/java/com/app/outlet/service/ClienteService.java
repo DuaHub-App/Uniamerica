@@ -32,7 +32,7 @@ public class ClienteService {
     }
 
     public Cliente save(Cliente cliente) {
-        Set<ConstraintViolation<Cliente>> violations = validator.validate(cliente);
+        Set<ConstraintViolation<Cliente>> violations = validator.validate(cliente);// Valida o cliente usando o validador injetado
         if (violations.isEmpty()) {
             return clienteRepository.save(cliente);
         } else {

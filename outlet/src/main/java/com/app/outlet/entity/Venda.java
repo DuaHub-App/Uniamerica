@@ -20,15 +20,16 @@ public class Venda {
 	@DecimalMin(value = "0.0", inclusive = false, message = "O valor total deve ser maior que zero") 
 	private Double valorTotal;
 	
-	@ManyToOne
+	
+	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "cliente_id")
 	private Cliente cliente;
 	
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL)//manda todas as operações realizadas na venda para os produtos associados
 	@JoinColumn(name = "funcionario_id")
 	private Funcionario funcionario;
 	
-	@ManyToMany
+	@ManyToMany(cascade = CascadeType.ALL)//manda todas as operações para ser automaticamente aplicadas aos produtos
 	@JoinTable(
 			name = "venda_produto",
 			joinColumns = @JoinColumn(name = "venda_id"), 
