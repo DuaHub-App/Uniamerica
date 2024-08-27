@@ -1,9 +1,10 @@
-package service;
+package com.app.outlet.service;
 
-import entity.Venda;
-import repository.VendaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import com.app.outlet.entity.Venda;
+import com.app.outlet.repository.VendaRepository;
 
 import java.util.List;
 import java.util.Optional;

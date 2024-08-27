@@ -1,9 +1,10 @@
-package service;
+package com.app.outlet.service;
 
-import entity.Funcionario;
-import repository.FuncionarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import com.app.outlet.entity.Funcionario;
+import com.app.outlet.repository.FuncionarioRepository;
 
 import java.util.List;
 import java.util.Optional;

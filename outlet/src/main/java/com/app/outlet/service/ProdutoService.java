@@ -1,9 +1,10 @@
-package service;
+package com.app.outlet.service;
 
-import entity.Produto;
-import repository.ProdutoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import com.app.outlet.entity.Produto;
+import com.app.outlet.repository.ProdutoRepository;
 
 import java.util.List;
 import java.util.Optional;

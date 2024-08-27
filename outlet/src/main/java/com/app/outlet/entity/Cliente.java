@@ -1,17 +1,16 @@
-package entity;
+package com.app.outlet.entity;
 
 import lombok.Data;
 import java.util.List;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id; // Importação corrigida
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
-import jakarta.validation.constraints.NotNull; 
-
-import org.springframework.data.annotation.Id;
+import jakarta.validation.constraints.NotNull;
 
 @Data
 @Entity
@@ -19,15 +18,15 @@ import org.springframework.data.annotation.Id;
 public class Cliente {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)//aqui diz que o id é um valor gerado automaticamente
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotNull(message = "Nome não pode ser nulo")//valida o campo nome como não nulo
-    @Size(min = 2, max = 100, message = "Nome deve ter entre 2 e 100 caracteres")//faz a validação de tamanho do nome
+    @NotNull(message = "Nome não pode ser nulo")
+    @Size(min = 2, max = 100, message = "Nome deve ter entre 2 e 100 caracteres")
     private String nome;
 
     @NotNull(message = "CPF não pode ser nulo")
-    @Pattern(regexp = "\\d{11}", message = "CPF deve ter 11 dígitos")//valida o cpf como um dado que tenha 11 digitos e conta apenas os numeros como digitos validos
+    @Pattern(regexp = "\\d{11}", message = "CPF deve ter 11 dígitos")
     private String cpf;
 
     @NotNull(message = "Idade não pode ser nula")
@@ -39,5 +38,6 @@ public class Cliente {
 
     @OneToMany(mappedBy = "cliente")
     private List<Venda> vendas;
-    
+
+    // Getters e Setters personalizados, caso precise
 }

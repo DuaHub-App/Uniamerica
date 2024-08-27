@@ -1,4 +1,4 @@
-package entity;
+package com.app.outlet.entity;
 
 import lombok.Data;
 import jakarta.validation.constraints.*;
@@ -19,6 +19,11 @@ public class Produto {
 	@NotNull(message = "Valor do produto não pode ser nulo")
 	@DecimalMin(value = "0.0", inclusive = false, message = "O valor deve ser positivo")
 	private Double valor;
+
+	public Object getNome() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 	//@NotNull
 	//private int quantidadeEstoque;futuramente pode ser implementado
