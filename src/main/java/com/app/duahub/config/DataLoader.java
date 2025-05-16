@@ -28,4 +28,6 @@ public class DataLoader implements CommandLineRunner {
             return loginRepository.save(user);
         });
     }
+
+    // resolver b.o
 }
